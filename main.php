@@ -163,8 +163,10 @@ class Magic_Contact {
     $website = empty($_POST['website']) ? false : esc_url($_POST['website']);
     $contactMessage = sprintf('<div><p style="font-weight: bold; display: inline;">From:</p> %s</div>',$name);
     $contactMessage = sprintf('<div><p style="font-weight: bold; display: inline;">Phone:</p> %s</div>',$phone); // [+] Added Phone field
-    if($website)
+	/* [-] Website is not needed
+	if($website)
       $contactMessage .= sprintf('<div><p style="font-weight: bold; display: inline;">Website:</p> %s</div>',$website);
+	 */
     if($emailAddr)
       $contactMessage .= sprintf('<div><p style="font-weight: bold; display: inline;">Reply to:</p> %s</div>',$emailAddr);
     

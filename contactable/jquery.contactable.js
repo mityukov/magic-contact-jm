@@ -57,14 +57,14 @@
 			div_form = '<div id="contactable" '+conf_side+' ></div><form '+conf_side+' id="contactForm" method="" action=""><div id="loading"></div><div id="callback"></div><div class="holder">';
 			div_form += '<p><label for="name">'+defaults.label_name+' <span class="red"> * </span></label><br /><input id="name_mc" class="contact" name="name" /></p>';
 			if(defaults.hide_email == 'false'){
-			  div_form += '<p><label for="email">'+defaults.label_email+' <span class="red"> * </span></label><br /><input id="email_mc" class="contact" name="email" /></p>';
+			  div_form += '<p><label for="email">'+defaults.label_email+' </label><br /><input id="email_mc" class="contact" name="email" /></p>';
 		  }
 			// [+] Added phone field
 		    div_form += '<p><label for="phone">'+defaults.label_phone+' <span class="red"> * </span></label><br /><input id="phone_mc" class="contact" name="phone" /></p>';
 		  if(defaults.hide_website == 'false'){
 			  div_form += '<p><label for="url">'+defaults.label_website+' <span class="red"> * </span></label><br /><input id="website_mc" class="contact" name="url" /></p>';
 		  }
-			div_form += '<p><label for="comment">'+defaults.label_feedback+' <span class="red"> * </span></label><br /><textarea id="comment_mc" name="comment" class="comment" rows="4" cols="30" ></textarea></p>';
+			div_form += '<p><label for="comment">'+defaults.label_feedback+' </label><br /><textarea id="comment_mc" name="comment" class="comment" rows="4" cols="30" ></textarea></p>';
 			div_form += '<p><input class="submit" type="submit" value="'+defaults.label_send+'"/></p>';
 			div_form += '<p class="disclaimer">'+defaults.disclaimer+'</p></div></form>';
 			
@@ -111,7 +111,7 @@
 						minlength: 2
 					},
 					email: {
-						required: true,
+						required: false,
 						email: true
 					},
 					phone: { // [+] Add Phone field
@@ -123,7 +123,7 @@
 						url: true
 					},
 					comment: {
-						required: true
+						required: false
 					}
 				},
 				//set messages to appear inline

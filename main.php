@@ -157,10 +157,12 @@ class Magic_Contact {
    
     $name = esc_attr(trim($_POST['name']));
     $emailAddr = is_email($_POST['email']) ? $_POST['email']: get_bloginfo('admin_email');
+	$phone = esc_attr(trim($_POST['phone'])); // [+] Added Phone field
     $comment = nl2br(esc_attr(trim($_POST['comment'])));
     $subject = esc_attr(trim($_POST['subject']));	
     $website = empty($_POST['website']) ? false : esc_url($_POST['website']);
     $contactMessage = sprintf('<div><p style="font-weight: bold; display: inline;">From:</p> %s</div>',$name);
+    $contactMessage = sprintf('<div><p style="font-weight: bold; display: inline;">Phone:</p> %s</div>',$phone); // [+] Added Phone field
     if($website)
       $contactMessage .= sprintf('<div><p style="font-weight: bold; display: inline;">Website:</p> %s</div>',$website);
     if($emailAddr)

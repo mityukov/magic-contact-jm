@@ -27,10 +27,12 @@
 		var defaults = {
 			name: 'Name',
 			email: 'Email',
+			phone: 'Phone', // [+] Added phone field
 			message : 'Message',
 			subject : 'A contactable message',
 			label_name: 'Name',
       label_email: 'E-Mail',
+      label_phone: 'Phone',
       label_website: 'Website',
       label_feedback: 'Your Feedback',
       label_send: 'SEND',
@@ -57,8 +59,10 @@
 			if(defaults.hide_email == 'false'){
 			  div_form += '<p><label for="email">'+defaults.label_email+' <span class="red"> * </span></label><br /><input id="email_mc" class="contact" name="email" /></p>';
 		  }
+			// [+] Added phone field
+		    div_form += '<p><label for="phone">'+defaults.label_phone+' <span class="red"> * </span></label><br /><input id="phone_mc" class="contact" name="phone" /></p>';
 		  if(defaults.hide_website == 'false'){
-			  div_form += '<p><label for="email">'+defaults.label_website+' <span class="red"> * </span></label><br /><input id="website_mc" class="contact" name="url" /></p>';
+			  div_form += '<p><label for="url">'+defaults.label_website+' <span class="red"> * </span></label><br /><input id="website_mc" class="contact" name="url" /></p>';
 		  }
 			div_form += '<p><label for="comment">'+defaults.label_feedback+' <span class="red"> * </span></label><br /><textarea id="comment_mc" name="comment" class="comment" rows="4" cols="30" ></textarea></p>';
 			div_form += '<p><input class="submit" type="submit" value="'+defaults.label_send+'"/></p>';
@@ -110,6 +114,10 @@
 						required: true,
 						email: true
 					},
+					phone: { // [+] Add Phone field
+						required: true,
+						minlength: 4
+					},
 					url: {
 						required: true,
 						url: true
@@ -122,6 +130,7 @@
 					messages: {
 						name: "",
 						email: "",
+						phone: "", // [+] Add Phone field
 						url: "",
 						comment: ""
 					},			
@@ -132,10 +141,11 @@
 					name_val = $('#contactForm #name_mc').val();
 					if(defaults.hide_email == 'false') email_val = $('#contactForm #email_mc').val();
 					else email_val = 'nothing';
+					phone_val = $('#contactForm #phone_mc').val(); // [+] Added Phone field
 					if(defaults.hide_website == 'false') website_val = $('#contactForm #website_mc').val();
 					else website_val = 'nothing';
 					comment_val = $('#contactForm #comment_mc').val();
-					$.post(defaults.fileMail,{subject:defaults.subject, name: name_val, email: email_val, website: website_val, comment:comment_val, action:defaults.action},
+					$.post(defaults.fileMail,{subject:defaults.subject, name: name_val, email: email_val, phone: phone_val, website: website_val, comment:comment_val, action:defaults.action},
 					function(data){
 						$('#loading').css({display:'none'}); 
 						data = jQuery.trim(data);

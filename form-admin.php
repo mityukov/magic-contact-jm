@@ -51,6 +51,15 @@ elseif((!isset($this) || !is_a($this, 'Magic_Contact')))
       <div class="contactright">
         <input id="label_email_contact" name="magic_contact[label_email_contact]" type="text" class="magic_contact" value="<?php echo $this->options['label_email_contact']; ?>" />
       </div>
+
+<!-- new field added: -->
+      <div class="contactleft">
+        <label for="label_phone_contact"><?php _e('Label for Phone'); ?></label>
+      </div>
+      <div class="contactright">
+        <input id="label_phone_contact" name="magic_contact[label_phone_contact]" type="text" class="magic_contact" value="<?php echo $this->options['label_phone_contact']; ?>" />
+      </div>
+<!-- /End of phone field -->
       
       <div class="contactleft">
         <label for="label_website_contact"><?php _e('Label for Website'); ?></label>

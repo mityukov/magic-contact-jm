@@ -50,6 +50,7 @@ class Magic_Contact {
       'subject_contact'         => 'A contactable message',
       'label_name_contact'      => 'Name',
       'label_email_contact'     => 'E-Mail',
+      'label_phone_contact'     => 'Phone contact', // [+] added Phone contact field;
       'label_website_contact'   => 'Website',
       'label_feedback_contact'  => 'You Feedback',
       'label_send_contact'      => 'SEND',
@@ -96,6 +97,8 @@ class Magic_Contact {
         $nv['subject_contact'] = isset($mc['subject_contact']) ? $mc['subject_contact'] : $this->options['subject_contact'];
         $nv['label_name_contact'] = isset($mc['label_name_contact']) ? $mc['label_name_contact'] : $this->options['label_name_contact'];
         $nv['label_email_contact'] = isset($mc['label_email_contact']) ? $mc['label_email_contact'] : $this->options['label_email_contact'];
+		// [+] Added phone contact field:
+        $nv['label_phone_contact'] = isset($mc['label_phone_contact']) ? $mc['label_phone_contact'] : $this->options['label_phone_contact'];
         $nv['label_website_contact'] = isset($mc['label_website_contact']) ? $mc['label_website_contact'] : $this->options['label_website_contact'];
         $nv['label_feedback_contact'] = isset($mc['label_feedback_contact']) ? $mc['label_feedback_contact'] : $this->options['label_feedback_contact'];
         $nv['label_send_contact'] = isset($mc['label_send_contact']) ? $mc['label_send_contact'] : $this->options['label_send_contact'];
@@ -127,6 +130,7 @@ class Magic_Contact {
       'subject'         => $this->options['subject_contact'],
       'label_name'      => $this->options['label_name_contact'],
       'label_email'     => $this->options['label_email_contact'],
+      'label_phone'     => $this->options['label_phone_contact'], // [+] Added Phone contact
       'label_website'   => $this->options['label_website_contact'],
       'label_feedback'  => $this->options['label_feedback_contact'],
       'label_send'      => $this->options['label_send_contact'],

@@ -58,7 +58,7 @@ form#contactForm input, form#contactForm textarea {
 	background:#FFFFFF none repeat scroll 0 0;
 	outline-style:none;
 	outline-width:medium;
-	/*width:325px;*/
+	width:325px;
 	padding:5px;
 	border:1px solid #dfdfdf;
 	font-family: georgia;
